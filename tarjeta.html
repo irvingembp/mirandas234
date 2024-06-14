@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miranda S</title>
+    <link rel="stylesheet" href="tarjeta.css">
+</head>
+<body>
+    <h5>Ingresa los datos de tu tarjeta</h5>
+
+    <form id="crear" action="tarjeta.php" method="post">
+        <label for="nombre">Ingresa un número de tarjeta o una clave:</label>
+        <input type="text" id="nombre" name="nombre" required maxlength="16" pattern="\d+">
+        <br><br>
+        
+        <label for="fecha_vencimiento">Fecha de vencimiento:</label>
+        <input type="date" id="fecha_vencimiento" name="fecha_vencimiento" max="2029-12-31" required>
+        <br><br>
+        
+        <label for="CVV">CVV:</label>
+        <input type="password" id="CVV" name="CVV" maxlength="4" required>
+        <br><br>
+        
+        <label for="pa">País:</label>
+        <select name="pa" id="pa">
+            <option value="Mexico">México</option>
+            <option value="Estados Unidos">Estados Unidos</option>
+            <option value="Brazil">Brasil</option>
+            <option value="Espana">España</option>
+        </select>
+        <br><br>
+        
+        <button type="reset" id="cancelar">Cancelar</button>
+        <button type="submit" id="crears" onclick="alerta()">Enviar</button>
+    </form>
+    <script>
+        // Redireccionar al hacer clic en el botón Cancelar
+        document.getElementById('cancelar').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = 'cart.php';
+        });
+    </script>
+    <script>
+      function alerta(){
+        alert("compra realizada con exito")
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html> 
+<html>
+<head>  
+    <link rel="icon" href="2.jpg"> <!-- icono  del sitio web -->
+    <title>Actualizar cuenta</title> <!-- Título de la página -->
+    <meta charset="utf-8">
+    <script>
+        // Función para validar el formulario
+        function validarFormulario() {
+            var correo = document.getElementById("correo").value;
+            var nombre = document.getElementById("nombre").value;
+            var edad = document.getElementById("edad").value;
+            var ape = document.getElementById("ape").value;
+            var contra = document.getElementById("contra").value;
+            var tel = document.getElementById("tel").value;
+            var met = document.getElementById("met").value;
+
+            // Validación del formato del correo electrónico
+            var correoValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
+            if (!correoValido) {
+                alert("Por favor ingresa un correo electrónico válido.");
+                return false;
+            }
+            // Verificación de que el nombre no esté vacío
+            if (nombre.trim() === "") {
+                alert("Por favor ingresa tu nombre.");
+                return false;
+            }
+            // Verificación de que la edad sea mayor o igual a 18
+            if (edad < 18) {
+                alert("Debes ser mayor de 18 años para registrarte.");
+                return false;
+            }
+            // Verificación de que el apellido paterno no esté vacío
+            if (ape.trim() === "") {
+                alert("Por favor ingresa tu apellido paterno.");
+                return false;
+            }
+            // Verificación de la longitud de la contraseña
+            if (contra.length < 6) {
+                alert("La contraseña debe tener al menos 6 caracteres.");
+                return false;
+            }
+            // Verificación del número telefónico
+            if (tel.length !== 10 || isNaN(tel)) {
+                alert("Por favor ingresa un número telefónico válido.");
+                return false;
+            }
+            alert("¡Cuenta actualizada correctamente!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>MIRANDA´S </h1> 
+    <h2 class="animated-text">ACTUALIZAR TU CUENTA</h2>
+    <link rel="stylesheet" href="general.css">
+    <form id="actualizar" method="post" action="conexion actualizar.php" onsubmit="return validarFormulario()">
+        <!-- Formulario para actualizar la cuenta con método POST y validación al enviar -->
+        <input type="image" src="actualizar.jpeg" alt="ups... aqui se nos perdio una foto" width="48" height="48">
+
+        <label for="correo">Correo electrónico</label> 
+        <input type="email" id="correo" name="correo" required> <!-- Campo para el correo electrónico -->
+
+        <label for="nombre">Nombre</label> 
+        <input type="text" id="nombre" name="nombre" required> <!-- Campo para el nombre -->
+
+        <label for="edad">Edad</label> 
+        <input type="number" id="edad" name="edad" min="18" required> <!-- Campo para la edad -->
+
+        <label for="ape">Apellido Paterno</label> 
+        <input type="text" id="ape" name="ape" required> <!-- Campo para el apellido -->
+
+        <label for="contra">Contraseña</label> 
+        <!-- Campo para la contraseña -->
+        <input type="password" id="contra" name="contra" placeholder="Mínimo 6 caracteres" minlength="6" required> 
+
+        <label for="tel">Número telefónico</label> 
+        <input type="text" id="tel" name="tel" maxlength="10" required> <!-- Campo para el número telefónico -->
+
+        <label for="met">Método de pago</label> 
+        <select name="met" id="met" required>
+            <!-- Campo para seleccionar el método de pago -->
+            <option value="Tarjeta">Tarjeta 💳</option>
+            <option value="Efectivo">Efectivo 💵</option>
+        </select>
+        <label>Si deseas volver <a href="inicio.html">Haz clic aquí</a></label> <!-- Enlace para volver a la página de inicio -->
+
+        <button type="button" class="cancel-button hover-button" id="cancel" onclick="alert('¡Actualización cancelada!')">Cancelar</button>
+        <button type="submit" class="reset-button hover-button" id="enviar">Actualizar cuenta</button> 
+    </form>
+    <script>
+        // Redireccionar al hacer clic en el botón Cancelar
+        document.getElementById('cancel').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = 'inicio.html';
+        });
+    </script>
+</body>
+</html>

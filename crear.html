@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear cuenta miranda</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1><b>¡Bienvenid@s!</b></h1>
+    <h2><b>Crear cuenta</b></h2>
+    <link rel="stylesheet" href="general.css"> <!-- Enlace a la hoja de estilos login.css -->
+    <form id="crear" method="post" action="conexion.php"> <!-- Formulario de creación de cuenta -->
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" pattern="[A-Za-z\s]+" title="Introduce solo letras y espacios." required>
+        
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" name="edad" minlength="18"> <!-- Campo de edad -->
+        
+        <label for="ape">Apellido</label>
+        <input type="text" id="ape" name="ape" pattern="[A-Za-z\s]+" title="Introduce solo letras y espacios." required> <!-- Campo de apellido -->
+        
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" required> <!-- Campo de correo electrónico -->
+        
+        <label for="contra">Contraseña</label>
+        <input type="password" id="contra" name="contra" placeholder="Mínimo 6 caracteres" minlength="6" required> <!-- Campo de contraseña -->
+        
+        <label for="confir">Confirmar Contraseña</label>
+        <input type="password" id="confir" name="confir" minlength="6" required> <!-- Campo para confirmar contraseña -->
+        
+        <label for="tel">Número telefónico</label>
+        <input type="tel" id="tel" name="tel" maxlength="10" required> <!-- Campo de número telefónico -->
+        
+        <label for="met">Método de pago</label>
+        <select name="met" id="met">
+            <option value="Tarjeta">Tarjeta 💳</option>
+            <option value="Efectivo">Efectivo 💵</option>
+        </select> <!-- Selección del método de pago -->
+        
+        <label>Si ya tienes una cuenta <a href="inicio.html">"Inicia sesión"</a></label> <!-- Enlace para iniciar sesión si ya se tiene una cuenta -->
+        
+        <button type="reset" id="cancel">Cancelar</button> <!-- Botón para cancelar la creación de cuenta -->
+        <button type="submit" id="enviar">Crear cuenta</button> <!-- Botón para enviar el formulario de creación de cuenta -->
+    </form>
+    <script>
+        const formulario = document.getElementById('crear'); // Obtiene el formulario por su ID 'crear'
+        formulario.addEventListener('submit', (event) => { // Agrega un evento 'submit' al formulario
+            event.preventDefault(); // Previene el comportamiento por defecto de envío del formulario
+            
+            // Obtiene los valores de los campos del formulario
+            const nombre = document.getElementById('nombre').value;
+            const edad = document.getElementById('edad').value;
+            const ape = document.getElementById('ape').value;
+            const correo = document.getElementById('correo').value;
+            const contra = document.getElementById('contra').value;
+            const confir = document.getElementById('confir').value;
+            const tel = document.getElementById('tel').value;
+            const met = document.getElementById('met').value;
+
+            // Comprueba si las contraseñas coinciden
+            if (contra !== confir) {
+                alert('Las contraseñas no coinciden. Por favor, inténtalo de nuevo.');
+                return;
+            } else {
+                // Redirige a la página de menu.html si todo es válido
+                window.location.href = "menu.html";
+            }
+        });
+    </script>
+</body>
+</html>

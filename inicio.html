@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="2.jpg">
+    <title>SESION</title>
+</head>
+<body>
+    <link rel="stylesheet" href="general.css"> <!-- Enlace a la hoja de estilos login.css -->
+    <h1>MIRANDAS</h1>
+    <h2>INICIO DE SESIÓN</h2>
+    <form id="crear" method="post" action="Conexion inicio de sesion.php" onsubmit="mostrarAlerta()">
+        <input type="image" src="puerta.jpeg" alt="ups... aquí se nos perdió una foto" width="48" height="48"><br><br> <!-- Botón de imagen para iniciar sesión -->
+        <label for="correo">Correo electrónico: </label>
+        <input type="email" id="correo" name="correo" required><br><br> <!-- Campo de entrada para correo electrónico -->
+        <label for="contra">Contraseña: </label>
+        <input type="password" id="contra" name="contra" required><br><br> <!-- Campo de entrada para contraseña -->
+        <button class="cancel-button hover-button" id="cancel" onclick="mostrarAlertaCancel()">Cancelar</button> <!-- Botón para cancelar inicio de sesión -->
+        <button type="submit" class="cancel-button hover-button" id="enviar">Iniciar sesión</button><br> <!-- Botón para enviar formulario de inicio de sesión -->
+        <label>Si no tienes una cuenta <a href="crear.html">"pulsa aquí"</a></label> <!-- Enlace para crear una cuenta -->
+    </form>
+    <script>
+        function mostrarAlerta() {
+            alert("Iniciando sesión..."); // Alerta que indica inicio de sesión en proceso
+            window.location.href = "https:/localhost/abp/menu.php"; // Redirige al usuario a la página de menú después del inicio de sesión
+        }
+
+        function mostrarAlertaCancel() {
+            alert("Inicio de sesión cancelado."); // Alerta que indica que el inicio de sesión ha sido cancelado
+        }
+    </script>
+</body>
+</html>

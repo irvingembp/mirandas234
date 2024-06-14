@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Miranda'S</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="c:\Users\mario\Downloads\pregunta.jpeg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #80f198;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .question {
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid #4CAF50;
+            color: #4CAF50;
+            background-color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+        button:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        button:active {
+            background-color: #45a049;
+            border-color: #45a049;
+        }
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .form-buttons button,
+        .form-buttons a {
+            margin: 0;
+        }
+        script {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Preguntas Frecuentes</h1>
+        <div class="question">¿Cuáles son sus horarios de atención?</div>
+        <p>Nuestro horario es de lunes a viernes, de 08:00 a.m. a 6:00 p.m.</p>
+        <div class="question">¿Ofrecen opciones vegetarianas?</div>
+        <p>No, por el momento no contamos con opciones vegetarianas en nuestro menú.</p>
+        <div class="question">¿Dónde están ubicados?</div>
+        <p>Estamos ubicados en la Calle 5 de mayo al interior del mercado artesanos, local 8 y 9.</p>
+        <div class="question">¿Cómo puedo cambiar mi usuario?</div>
+        <p>Dirígete a la página de "actualizar datos" ahí encontrarás distintas opciones de datos que puedes cambiar.</p>
+        <div class="question">¿Tienen promociones/descuentos?</div>
+        <p>Por el momento no contamos con promociones ni descuentos, esperamos tenerlos pronto.</p>
+        <div class="question">¿Cómo puedo hacer un pedido en línea?</div>
+        <p>Puedes hacer un pedido en línea desde nuestra página web o llamando al siguiente teléfono 5587549547.</p>
+        <div class="question">¿Dónde puedo ver el manual de usuario?</div>
+        <p>Lo puedes encontrar en la página principal, hay un botón llamado "ayuda" ahí lo encuentras.</p>
+        <div class="question">¿Cuáles son los métodos de pago aceptados?</div>
+        <p>Tarjeta y efectivo.</p>
+        <div class="question">¿Cuál es el tiempo promedio de la preparación y entrega de los productos?</div>
+        <p>El tiempo promedio para la preparación y entrega ronda entre los 25 o 35 minutos.</p>
+        <div class="question">¿Dónde puedo dejar mi opinión?</div>
+        <!-- este iframe es proporcionado por YouTube directamente al dar en compartir
+        hay una opción que dice insertar y da el siguiente código -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/WUv9YHpl0Go?si=RGm4wJCVIpdvMx9y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <br><br>
+            <label for="opinion">Opinión:</label>
+            <textarea id="opinion" name="opinion" required></textarea>
+            <br><br>
+            <div class="form-buttons">
+                <button type="button" onclick="mostrarAlerta()">Enviar Opinión</button>
+                <a href="menu.php"><button type="button">Regresar a la pantalla principal</button></a>
+            </div>
+        </form>
+        <script>
+            function mostrarAlerta() {
+                var nombre = document.getElementById("nombre").value;
+                var opinion = document.getElementById("opinion").value;
+                alert("¡Gracias por tu opinión, " + nombre + "! Tu opinión es: " + opinion);
+            }
+        </script>
+    </div>
+    <h1>¿Estás aburrido? Juega un poco</h1>
+    <canvas id="snakeCanvas" width="400" height="400"></canvas>
+    <div>
+        <button id="startButton" class="button">Iniciar Juego</button>
+        <button id="resetButton" class="button">Reiniciar</button>
+    </div>
+    <script src="vivora.js"></script>
+</body>
+</html>

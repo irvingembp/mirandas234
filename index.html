@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Página principal</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body onload="alert('De un click en cualquier parte de la página web y se reproducirá música de fondo')" onclick="play()">
+    <h1><b>¡Bienvenid@!</b></h1>
+    
+    <div class="container">
+        <img src="2.jpg" class="imgRedonda" alt="Imagen de comida rápida" width="150" height="150">
+        <p>MIRANDA'S es una pequeña empresa local de comida rápida que en este sitio web verás un menú extenso de comida, como hamburguesas, papas a la francesa, etc. MIRANDA'S te ofrece una variedad de alimentos para que puedas disfrutarlos con la comodidad de tu celular. Con solo mover tus dedos podrás ordenar los alimentos que has querido y son alimentos con ingredientes 100% naturales, haciendo así que no haya problemas de higiene y salud al momento de ser ingeridos. Además, los precios de los productos están a un precio totalmente económico para que tú y tu familia puedan disfrutar de deliciosos platillos sin la necesidad de cocinar.</p>
+    </div>
+    
+    <h2>Más sobre nosotros</h2>
+    <video controls autoplay muted>
+        <source src="Y2meta.app - Spot Publicitario Comida Rapida.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+    </video>
+    <button onclick="irAComprar()">Ir a comprar</button>
+
+    <audio id="musica">
+        <source src="Y2meta.app - Música De Fondo Para Videos y Presentaciones (128 kbps).mp3">
+    </audio>
+    <script>
+        function play() {
+            document.getElementById("musica").play();
+        }
+        
+        function irAComprar() {
+            window.location.href = "inicio.html"; // Cambia "index.html" por la URL a la que quieras redirigir
+        }
+    </script>
+  
+    <h2>Para más información contacta al:</h2>
+    <p><u>Tel: 55 3773 2107</u></p>
+    <p><u>Correo: CodiGenMIRANDAS@gmail.com</u></p>
+</body>
+</html>
