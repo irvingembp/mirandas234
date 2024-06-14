@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="general.css"> <!-- Enlace a la hoja de estilos login.css -->
+    <link rel="icon" href="2.jpg"> <!-- Ícono de la página -->
+    <title>Eliminar Cuenta</title>
+    <script>
+        // Función para validar el formulario antes de enviarlo
+        function validarFormulario() {
+            var correo = document.getElementById("correo").value;
+            var contra = document.getElementById("contra").value;
+            
+            // Validación del campo de correo electrónico
+            if (correo.trim() === "") {
+                alert("Por favor, ingresa tu correo electrónico.");
+                return false;
+            }
+            
+            // Validación del campo de contraseña
+            if (contra.trim() === "") {
+                alert("Por favor, ingresa tu contraseña.");
+                return false;
+            }
+
+            return true; // Retorna true si ambos campos están llenos y el formulario puede ser enviado
+        }
+
+        // Función para mostrar un mensaje de éxito al eliminar la cuenta
+        function mostrarMensaje() {
+            alert("¡Tu cuenta ha sido eliminada con éxito!");
+        }
+    </script>
+</head>
+<body>
+    <h1><b>MIRANDA´S</b></h1>
+    <h2>ELIMINA TU CUENTA</h2>
+    <form action="conexion eliminar.php" method="post" onsubmit="mostrarMensaje()">
+        <input type="image" src="botedebasura.png" alt="ups... aquí se nos perdió una foto" width="48" height="48"><br><br> <!-- Botón de imagen para eliminar cuenta -->
+
+        <label for="correo">Correo electrónico:</label><br>
+        <input type="email" id="correo" name="correo" required><br><br> <!-- Campo de entrada para correo electrónico -->
+
+        <label for="contra">Contraseña:</label><br>
+        <input type="password" id="contra" name="contra" required><br><br> <!-- Campo de entrada para contraseña -->
+
+        <input type="hidden" name="eliminar_cuenta" value="1"> <!-- Campo oculto para indicar que se desea eliminar la cuenta -->
+        <input type="submit" value="Eliminar Cuenta" id="enviar" onclick="return validarFormulario()"><br> <!-- Botón para enviar el formulario de eliminación de cuenta -->
+        
+        <button type="button" class="cancel-button hover-button" id="cancel">Cancelar</button> <!-- Botón para cancelar la eliminación de cuenta -->
+        <label>Si deseas volver <a href="inicio.html">Haz clic aquí</a></label> <!-- Enlace para volver a la página de inicio -->
+    </form>
+    <script>
+        // Redirigir al hacer clic en el botón Cancelar
+        document.getElementById('cancel').addEventListener('click', function(event) {
+            event.preventDefault(); // Evitar el comportamiento por defecto de enviar el formulario
+            window.location.href = 'inicio.html'; // Redirigir a la página de inicio
+        });
+    </script>
+</body>
+</html>

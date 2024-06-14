@@ -1,0 +1,81 @@
+
+/* Estilo para el contenedor del formulario */
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para los encabezados */
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Estilo para las etiquetas de los campos */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Estilo para los campos de entrada */
+input[type="email"], input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    left: auto;
+}
+
+/* Estilo para los botones */
+button {
+    width: calc(50% - 12px);
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+/* Estilos para el botón de cancelar */
+#cancel {
+    background-color: #d9534f; 
+}
+
+/* Estilos para el botón de enviar */
+#enviar {
+    background-color: #5cb85c; 
+}
+
+/* Estilo para el hover de los botones */
+button:hover {
+    opacity: 0.9;
+}
+
+/* Estilo para los enlaces */
+a {
+    color: #5cb85c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para centrar el contenedor del formulario */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient( rgb(121, 218, 245), white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
